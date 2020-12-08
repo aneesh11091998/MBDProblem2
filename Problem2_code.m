@@ -1,0 +1,13 @@
+th = linspace(0,35*pi) ;
+r=0.1*sin(th) ; 
+r((th>pi) & (th<2*pi))=0 ;
+r((th>2*pi) & (th<4*pi))=0.02 ;
+r((th>4*pi) & (th<8*pi))=0.01 ;
+r((th>8*pi) & (th<16*pi))=0.005 ;
+r((th>17*pi) & (th<20*pi))=0.01 ;
+r((th>21*pi) & (th<25*pi))=0.005 ;
+r((th>25*pi) & (th<35*pi))=0 ;
+r=r';
+th=th';
+plot(th,r,'linewidth',10);
+sim('Prob2_MBD');
